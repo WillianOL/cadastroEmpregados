@@ -1,0 +1,95 @@
+.conteinerTable {
+  width: 100%;
+  h2 {
+    text-align: center;
+  }
+}
+
+.table {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.075);
+  th,
+  tr {
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    font-weight: 400;
+  }
+
+  .tableHead {
+    th {
+      padding: 5px;
+      font-weight: 500;
+      color: rgb(8, 119, 245);
+      text-align: center;
+    }
+    th:nth-child(1) {
+      width: 500px;
+    }
+    th:nth-child(2) {
+      width: 10px;
+    }
+    th:nth-child(3) {
+      width: 250px;
+    }
+  }
+
+  .tableBody {
+    tr {
+      height: 40px;
+      position: relative;
+      .buttonConteiner {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-left: 10px;
+        display: none;
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0.7;
+          height: 38px;
+          width: 38px;
+          border-radius: 50%;
+          border: 1px solid rgb(230, 230, 230);
+          background-color: white;
+          color: rgb(8, 119, 245);
+          transition: all 0.2s ease;
+          cursor: pointer;
+          svg {
+            font-size: 1.2rem;
+          }
+          &:hover {
+            background-color: rgb(8, 119, 245);
+            color: white;
+            opacity: 1;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
+      }
+
+      &:hover .buttonConteiner {
+        display: flex;
+      }
+    }
+
+    tr {
+      th:nth-child(1) {
+        width: 500px;
+      }
+      th:nth-child(2) {
+        width: 10px;
+      }
+      th:nth-child(3) {
+        width: 250px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.formAddConteiner {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: .9rem;
+      input, select {
+        padding: 5px 10px;
+        width: 100%;
+        border-radius: 5px;
+        height: 35px;
+        border: 1px solid rgba(0, 0, 0, 0.26);
+        outline: none;
+        &:hover, &:focus {
+          box-shadow: 0px 0px 3px 1px rgb(58, 147, 250);
+          border-color: rgb(8, 119, 245);
+        }
+      }
+
+      select {
+        min-width: 260px;
+      }
+    }
+
+    label:nth-child(1) {
+      min-width: 320px;
+    }
+
+    label:nth-child(2) {
+      input {
+        width: 50px !important;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    height: fit-content;
+    align-self: flex-end;
+    background-color: rgb(8, 119, 245);
+    color: white;
+    border: 1px solid rgb(8, 119, 245);
+    border-radius: 5px;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: all .2s ease;
+    &:hover {
+      background-color: white;
+      color: rgb(8, 119, 245);
+      box-shadow: 0px 0px 3px 1px rgb(54, 144, 247);
+    }
+  }
+}
