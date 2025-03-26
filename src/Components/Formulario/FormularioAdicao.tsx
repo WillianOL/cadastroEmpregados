@@ -32,7 +32,7 @@ const FormularioAdicao = ({
   ];
 
   async function createEmployee() {
-    const res = await axios.post('http://localhost:3333/empregados', {
+    const res = await axios.post('https://backend-cadastroempregados.onrender.com/empregados', {
       nome: userName,
       idade: userAge,
       cargo: userPosition,
@@ -54,7 +54,7 @@ const FormularioAdicao = ({
   async function updateEmployee() {
     const employeeSelected = listEmployee.find(({ id }) => id === employeeId);
     if (employeeSelected) {
-      const res = await axios.put('http://localhost:3333/empregados', {
+      const res = await axios.put('https://backend-cadastroempregados.onrender.com/empregados', {
         id: employeeSelected.id,
         nome: userName ? userName : employeeSelected.nome,
         idade: userAge ? userAge : employeeSelected.idade,

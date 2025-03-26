@@ -10,8 +10,9 @@ function App() {
   const [employeeId, setEmployeeId] = React.useState('');
 
   async function getEmployee() {
-    const res = await axios.get('http://localhost:3333/empregados');
+    const res = await axios.get('https://backend-cadastroempregados.onrender.com/empregados');
     setListEmployee(res.data);
+    console.log(res);
   }
 
   React.useEffect(() => {

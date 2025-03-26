@@ -19,7 +19,7 @@ const UsuariosPainel = ({
   setEmployeeId
 }: UserPainel) => {
   async function deleteEmployee(id: string) {
-    await axios.delete(`http://localhost:3333/empregados/${id}`);
+    await axios.delete(`https://backend-cadastroempregados.onrender.com/empregados/${id}`);
     getEmployee();
   }
 
