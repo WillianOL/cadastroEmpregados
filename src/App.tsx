@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <main>
-        <h1>Filtro de empregados</h1>
-        <p>Cadastro e filtragem de empregados por nome, idade, data e cargo.</p>
+        <h1>Cadastro de empregados</h1>
+        <p>Cadastro de empregados por nome, idade, data e cargo.</p>
         <section>
           <div className="forms">
             <FormularioAdicao
