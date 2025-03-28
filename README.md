@@ -129,7 +129,7 @@ Este é um sistema de cadastro de empregados desenvolvido em React, que permite 
 
 3. Execute o projeto:
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. Certifique-se de que o backend está acessível em:  
