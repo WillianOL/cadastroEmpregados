@@ -115,7 +115,97 @@ Este é um sistema de cadastro de empregados desenvolvido em React, que permite 
 
 ---
 
-### **Como Executar o Projeto**
+### **Estrutura do Backend**
+
+- **Backend**:
+  - API RESTful para operações CRUD (Create, Read, Update, Delete).
+  - Validações para garantir a consistência dos dados.
+  - Gerenciamento de empregados no banco de dados utilizando Prisma.
+
+#### **Configuração do Servidor**
+O servidor é configurado no arquivo principal para lidar com requisições de diferentes origens (CORS) e gerenciar rotas.
+
+**Código:**
+```typescript
+import express from 'express';
+import cors from 'cors';
+import { allRoutes } from './routes';
+
+const port = process.env.PORT || 3001;
+
+const app = express();
+
+app.use(cors({
+  origin: "https://cadastro-empregados.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+}));
+app.use(express.json());
+app.use(allRoutes);
+
+app.listen(3333, () => {
+  console.log('Server rodando na porta 3333');
+});
+```
+
+---
+
+#### **Rotas da API**
+
+##### **Criar Empregado (`POST /empregados`)**
+Cria um novo empregado no banco de dados.
+
+- **Corpo da Requisição**:
+  ```json
+  {
+    "nome": "João",
+    "idade": "30",
+    "cargo": "Analista",
+    "dataAdicao": "28-03-2025"
+  }
+  ```
+- **Resposta**: Retorna o empregado criado com sucesso (código 201).
+
+##### **Listar Empregados (`GET /empregados`)**
+Recupera a lista de empregados armazenados.
+
+- **Resposta**: Array de objetos com os dados dos empregados (código 200).
+
+##### **Atualizar Empregado (`PUT /empregados`)**
+Atualiza os dados de um empregado existente.
+
+- **Corpo da Requisição**:
+  ```json
+  {
+    "id": 1,
+    "nome": "João Silva",
+    "idade": "31",
+    "cargo": "Gerente"
+  }
+  ```
+- **Validações**:
+  - ID é obrigatório.
+  - O empregado deve existir no banco de dados.
+- **Resposta**: Retorna o empregado atualizado (código 200).
+
+##### **Excluir Empregado (`DELETE /empregados/:id`)**
+Remove um empregado pelo ID.
+
+- **Parâmetro da URL**:
+  - `id`: ID do empregado a ser removido.
+- **Validações**:
+  - O ID é obrigatório.
+  - O empregado deve existir no banco de dados.
+- **Resposta**: Mensagem de sucesso ou erro.
+
+---
+
+### **Banco de Dados**
+- O gerenciamento dos dados dos empregados é feito com o Prisma ORM, conectado ao banco de dados configurado no projeto.
+
+---
+
+### **Como Executar**
 
 1. Clone o repositório:
    ```bash
@@ -127,13 +217,20 @@ Este é um sistema de cadastro de empregados desenvolvido em React, que permite 
    npm install
    ```
 
-3. Execute o projeto:
+3. Configure o Prisma e o banco de dados:
+   - Certifique-se de que o arquivo `prisma/schema.prisma` está configurado corretamente.
+
+4. Execute as migrações do banco de dados:
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. Inicie o servidor:
    ```bash
    npm run dev
    ```
 
-4. Certifique-se de que o backend está acessível em:  
-   `https://backend-cadastroempregados.onrender.com/empregados`.
+O servidor estará disponível em: `http://localhost:3333`.
 
 
 
