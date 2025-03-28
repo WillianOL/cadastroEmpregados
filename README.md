@@ -137,11 +137,6 @@ Este é um sistema de cadastro de empregados desenvolvido em React, que permite 
 
 ---
 
-### **Contribuição**
-Contribuições são bem-vindas! Envie suas ideias e melhorias através de pull requests ou issues.
-
----
-
 ### **Licença**
 Este projeto está sob a licença [MIT](https://opensource.org/licenses/MIT).
 
