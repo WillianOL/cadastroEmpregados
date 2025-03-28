@@ -135,16 +135,6 @@ Este é um sistema de cadastro de empregados desenvolvido em React, que permite 
 4. Certifique-se de que o backend está acessível em:  
    `https://backend-cadastroempregados.onrender.com/empregados`.
 
----
-
-### **Licença**
-Este projeto está sob a licença [MIT](https://opensource.org/licenses/MIT).
-
----
-
-&nbsp;
-&nbsp;
-
 
 
 
